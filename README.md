@@ -15,21 +15,7 @@ Register products that you bought in the United States and you will be able to s
 
 ### Dependencies
 
-This project uses the following firebase dependencies
-
-* FirebaseAnalyticsSwift
-* FirebaseAuth
-* FirebaseDatabaseSwift
-* FirebaseFirestoreSwift
-* FirebaseRemoteConfigSwift
-* FirebaseStorege
-
-These dependencies must be installed, after importing the Firebase package in Swift Package Manager
-
-Add a [Firebase config file](https://firebase.google.com/docs/ios/setup#add-config-file), related to your Firebase account (GoogleService-Info.plist)
-
-[Add Firebase to your Apple Project](https://firebase.google.com/docs/ios/setup)
-
+[Core Data](https://developer.apple.com/documentation/coredata)
 ## Authors
 
 #### [André](https://github.com/AndCordeiro)
