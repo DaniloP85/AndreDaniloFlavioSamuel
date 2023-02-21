@@ -11,7 +11,7 @@
         <!--Lista de compras-->
         <scene sceneID="jap-p1-b7P">
             <objects>
-                <tableViewController id="W5U-MV-5ZM" sceneMemberID="viewController">
+                <tableViewController id="W5U-MV-5ZM" customClass="ShoppingListTableViewController" customModule="AndreDaniloFlavioSamuel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="FH3-SB-FFo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,7 @@
         <!--Cadastrar Produto-->
         <scene sceneID="twH-hT-N2B">
             <objects>
-                <viewController id="MCO-0w-4id" sceneMemberID="viewController">
+                <viewController id="MCO-0w-4id" customClass="AddAndEditProductViewController" customModule="AndreDaniloFlavioSamuel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q3X-3G-P3d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,7 +189,7 @@
         <!--Ajustes-->
         <scene sceneID="Uev-Bi-eNk">
             <objects>
-                <viewController id="78S-zF-HJt" sceneMemberID="viewController">
+                <viewController id="78S-zF-HJt" customClass="SettingsTableViewController" customModule="AndreDaniloFlavioSamuel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nxS-kh-WOF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -273,6 +273,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Adicionar estado"/>
+                                <connections>
+                                    <action selector="addState:" destination="78S-zF-HJt" eventType="touchUpInside" id="xzi-uW-J3w"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MXb-9p-9og"/>
@@ -302,6 +305,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Ajustes" image="settings" id="ijX-MQ-IKi"/>
                     <navigationItem key="navigationItem" id="u4y-tX-gsy"/>
+                    <connections>
+                        <outlet property="tfDollarExchangeRate" destination="cPv-2L-XYf" id="VKh-fs-g2B"/>
+                        <outlet property="tfIOF" destination="kjD-dT-agd" id="H9q-1H-jTI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjM-Z6-9PV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -310,7 +317,7 @@
         <!--Total de Compras-->
         <scene sceneID="alg-b3-4YD">
             <objects>
-                <viewController id="RkY-CT-di4" sceneMemberID="viewController">
+                <viewController id="RkY-CT-di4" customClass="TotalViewController" customModule="AndreDaniloFlavioSamuel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lpi-oA-XUj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
