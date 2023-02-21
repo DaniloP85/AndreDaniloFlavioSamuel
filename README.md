@@ -9,9 +9,8 @@ Professor: [Eric Alves Brito](https://www.linkedin.com/in/ericbrito)
 Register products that you bought in the United States and you will be able to see how much you will spend, in Reais, taking into account the taxes of the state where the product was purchased and the IOF if you bought the product with your credit card.
 
 ## Getting Started
-1. Create a [Firebase Account](https://support.google.com/appsheet/answer/10104995?hl=en) if you don't have one 
-2. Open the project in xcode
-3. If the [Firebase dependency](https://firebase.google.com/docs/ios/setup#add-sdks) does not come with a project, it will be necessary to install
+
+1. Open the project in xcode
 
 ### Dependencies
 

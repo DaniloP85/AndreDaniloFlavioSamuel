@@ -102,7 +102,6 @@
                             <pickerView contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdX-rA-4PQ">
                                 <rect key="frame" x="15" y="332" width="290" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="BCf-qI-wfA"/>
                                     <constraint firstAttribute="width" constant="290" id="r2x-7t-8K8"/>
                                 </constraints>
                             </pickerView>
@@ -399,6 +398,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WSA-g4-CcR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="B5V-sF-sLs">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <tabBarAppearance key="scrollEdgeAppearance"/>
