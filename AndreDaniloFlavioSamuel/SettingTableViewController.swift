@@ -1,5 +1,5 @@
 //
-//  SettingsTableViewController.swift
+//  SettingTableViewController.swift
 //  AndreDaniloFlavioSamuel
 //
 //  Created by Danilo Santos on 21/02/23.
@@ -7,9 +7,8 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingTableViewController: UITableViewController {
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,7 +17,6 @@ class SettingsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-//        dollarExchangeRate
     }
 
     // MARK: - Table view data source
@@ -34,7 +32,8 @@ class SettingsTableViewController: UITableViewController {
     }
     
     private func showAlertForItem() {
-        let alert = UIAlertController(title: "Produto", message: "Entre com as informações do produto", preferredStyle: .alert)
+        
+            let alert = UIAlertController(title: "Adicionar Estado", message: "", preferredStyle: .alert)
         
         alert.addTextField { textField in
             textField.placeholder = "Nome do estado"
@@ -48,7 +47,7 @@ class SettingsTableViewController: UITableViewController {
         }
         
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            
+            print("adicionar o produto")
         }
         
         alert.addAction(okAction)
@@ -59,6 +58,9 @@ class SettingsTableViewController: UITableViewController {
         present(alert, animated: true)
     }
 
+    @IBAction func addState(_ sender: Any) {
+        showAlertForItem()
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
