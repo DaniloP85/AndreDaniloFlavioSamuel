@@ -29,15 +29,8 @@ class SettingTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setConfigs(ok: "viewWillAppear")
+        setConfigsInScreen()
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        setConfigs(ok: "touchesEnded")
-        
-    }
-    
     
     // MARK: - IBActions
     @IBAction func addState(_ sender: Any) {
@@ -80,11 +73,14 @@ class SettingTableViewController: UITableViewController {
     
     // MARK: - Methods
     
-    func setConfigs(ok:String){
-        // falta pegar o momento exato para salvar as preferencias do usuario
-        print("gravar \(ok)")
+    func setConfigsInScreen(){
         tfDollarQuotation.text = String(tc.dollarQuotation)
         tfIOF.text = String(tc.IOF)
+    }
+    
+    func setConfigsValue(){
+        tc.defaults.set(tc.convertToDouble(tfDollarQuotation.text!), forKey: "dollarQuotation")
+        tc.defaults.set(tc.convertToDouble(tfIOF.text!), forKey: "IOF")
     }
     
     func loadState() {
@@ -152,5 +148,12 @@ extension SettingTableViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         tableView.reloadData()
+    }
+}
+
+extension SettingTableViewController: UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("Acabou")
+        setConfigsValue()
     }
 }
