@@ -132,15 +132,12 @@ class SettingTableViewController: UITableViewController {
                 print(error.localizedDescription)
             }
         }))
-        
-        
+
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
         alert.addAction(cancelAction)
         
         present(alert, animated: true)
     }
-
-
 }
 
 // MARK: - Extension
@@ -153,7 +150,6 @@ extension SettingTableViewController: NSFetchedResultsControllerDelegate {
 
 extension SettingTableViewController: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("Acabou")
         setConfigsValue()
     }
 }
