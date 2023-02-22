@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SettingTableViewController: UITableViewController {
 
@@ -14,33 +15,45 @@ class SettingTableViewController: UITableViewController {
     
     var state: State!
     
-    
+    var fetchedResultController: NSFetchedResultsController<State>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadState()
+        
+    }
+    
+    func loadState() {
+        let fetchRequest: NSFetchRequest<State> = State.fetchRequest()
+        let sortDescritor = NSSortDescriptor(key: "state", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescritor]
+        
+        fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchedResultController.delegate = self
+        
+        do {
+            try fetchedResultController.performFetch()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        let count = fetchedResultController.fetchedObjects?.count ?? 0
+        return count
     }
     
     private func showAlertForItem() {
         
-            let alert = UIAlertController(title: "Adicionar Estado", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Adicionar Estado", message: "", preferredStyle: .alert)
         
         alert.addTextField { textField in
             textField.placeholder = "Nome do estado"
@@ -54,7 +67,23 @@ class SettingTableViewController: UITableViewController {
         }
         
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            print("adicionar o produto")
+            if self.state == nil {
+                self.state = State(context: self.context)
+            }
+            
+            guard let name = alert.textFields?.first?.text,
+                  let value = alert.textFields?.last?.text else { return }
+            
+            self.state.state = name
+            self.state.tax = Double(value)!
+            
+            do {
+                try self.context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+            print("adicionar o produto \(name) valor \(value)")
         }
         
         alert.addAction(okAction)
@@ -123,4 +152,23 @@ class SettingTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension SettingTableViewController: NSFetchedResultsControllerDelegate {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+            case .insert:
+                break
+            case .delete:
+                tableView.reloadData()
+            case .move:
+                break
+            case .update:
+                break
+            @unknown default:
+                print("sei la ")
+        }
+        
+    }
 }
