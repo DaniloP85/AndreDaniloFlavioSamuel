@@ -10,17 +10,81 @@ import CoreData
 
 class SettingTableViewController: UITableViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var tfIOF: UITextField!
     @IBOutlet weak var tfDollarQuotation: UITextField!
     
+    // MARK: - Properties
     var state: State!
-    
     var fetchedResultController: NSFetchedResultsController<State>!
+    var label = UILabel()
     
+    // MARK: - Super Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        label.text = "Lista de estados vazia"
+        label.textAlignment = .center
         loadState()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setConfigs(ok: "viewWillAppear")
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        setConfigs(ok: "touchesEnded")
         
+    }
+    
+    
+    // MARK: - IBActions
+    @IBAction func addState(_ sender: Any) {
+        showAlertAddAndEdit(with: nil)
+    }
+       
+    // MARK: - Table view data source
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let count = fetchedResultController.fetchedObjects?.count ?? 0
+        tableView.backgroundView = count == 0 ? label : nil
+        return count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+
+        guard let state = fetchedResultController.fetchedObjects?[indexPath.row] else {
+            return cell
+        }
+
+        cell.textLabel?.text = state.state
+        cell.detailTextLabel?.text = String(state.tax)
+
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        state = fetchedResultController?.object(at: indexPath)
+        showAlertAddAndEdit(with: state)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let state = fetchedResultController.object(at: indexPath)
+            context.delete(state)
+            try? context.save()
+        }
+    }
+    
+    // MARK: - Methods
+    
+    func setConfigs(ok:String){
+        // falta pegar o momento exato para salvar as preferencias do usuario
+        print("gravar \(ok)")
+        tfDollarQuotation.text = String(tc.dollarQuotation)
+        tfIOF.text = String(tc.IOF)
     }
     
     func loadState() {
@@ -38,55 +102,41 @@ class SettingTableViewController: UITableViewController {
             print(error.localizedDescription)
         }
     }
-
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = fetchedResultController.fetchedObjects?.count ?? 0
-        return count
-    }
     
-    private func showAlertForItem() {
+    private func showAlertAddAndEdit(with state: State?) {
+        let title = state == nil ? "Adicionar" : "Editar"
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         
-        let alert = UIAlertController(title: "Adicionar Estado", message: "", preferredStyle: .alert)
-        
-        alert.addTextField { textField in
+        alert.addTextField { (textField) in
             textField.placeholder = "Nome do estado"
-//            textField.text = shoppingItem?.name
-        }
-        
-        alert.addTextField { textField in
-            textField.placeholder = "Imposto"
-            textField.keyboardType = .numberPad
-//            textField.text = shoppingItem?.quantity.description
-        }
-        
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            if self.state == nil {
-                self.state = State(context: self.context)
+            if let state = state?.state{
+                textField.text = state
             }
+        }
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Imposto"
+            textField.keyboardType = .decimalPad
+            if let taxes = state?.tax{
+                textField.text = self.tc.getString(of: taxes)
+            }
+        }
+        
+        alert.addAction(UIAlertAction(title: title, style: .default, handler: { (action) in
+            let state = state ?? State(context: self.context)
+            state.state = alert.textFields?.first?.text
             
-            guard let name = alert.textFields?.first?.text,
-                  let value = alert.textFields?.last?.text else { return }
-            
-            self.state.state = name
-            self.state.tax = Double(value)!
+            guard let taxes = alert.textFields?.last?.text else { return }
+            state.tax = self.tc.convertToDouble(taxes)
             
             do {
                 try self.context.save()
+                self.tableView.reloadData()
             } catch {
                 print(error.localizedDescription)
             }
-            
-            print("adicionar o produto \(name) valor \(value)")
-        }
+        }))
         
-        alert.addAction(okAction)
         
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
         alert.addAction(cancelAction)
@@ -94,81 +144,13 @@ class SettingTableViewController: UITableViewController {
         present(alert, animated: true)
     }
 
-    @IBAction func addState(_ sender: Any) {
-        showAlertForItem()
-    }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
+// MARK: - Extension
 extension SettingTableViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
-        switch type {
-            case .insert:
-                break
-            case .delete:
-                tableView.reloadData()
-            case .move:
-                break
-            case .update:
-                break
-            @unknown default:
-                print("sei la ")
-        }
-        
+        tableView.reloadData()
     }
 }
