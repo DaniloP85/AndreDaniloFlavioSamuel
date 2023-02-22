@@ -9,6 +9,13 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
 
+    @IBOutlet weak var tfIOF: UITextField!
+    @IBOutlet weak var tfDollarQuotation: UITextField!
+    
+    var state: State!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

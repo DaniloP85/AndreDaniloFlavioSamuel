@@ -196,7 +196,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="I3E-6A-GOk">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cotação do dólar (R$):" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDV-7a-Qlb">
                                     <rect key="frame" x="15" y="30" width="185" height="34"/>
@@ -318,6 +318,10 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Ajustes" image="settings" id="cKr-fi-KRs"/>
                     <navigationItem key="navigationItem" id="w54-XV-fZw"/>
+                    <connections>
+                        <outlet property="tfDollarQuotation" destination="IXU-6e-H6D" id="j1t-eS-jun"/>
+                        <outlet property="tfIOF" destination="c1P-1L-VkF" id="6AV-6r-Y3u"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7r6-Kk-8pm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
