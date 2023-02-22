@@ -101,7 +101,7 @@ class SettingTableViewController: UITableViewController {
     
     private func showAlertAddAndEdit(with state: State?) {
         let title = state == nil ? "Adicionar" : "Editar"
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "\(title) Estado", message: nil, preferredStyle: .alert)
         
         alert.addTextField { (textField) in
             textField.placeholder = "Nome do estado"
