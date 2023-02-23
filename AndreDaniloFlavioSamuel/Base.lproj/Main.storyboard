@@ -121,7 +121,7 @@
                                 <rect key="frame" x="314" y="357" width="46" height="31"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <segue destination="9Uw-mg-I7m" kind="show" id="8R0-x8-LwB"/>
+                                    <segue destination="9Uw-mg-I7m" kind="show" id="Hjr-iS-RZb"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Valor (U$)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILd-6b-Xe8">
@@ -202,7 +202,7 @@
             </objects>
             <point key="canvasLocation" x="2700" y="29.55665024630542"/>
         </scene>
-        <!--Ajustes-->
+        <!--Settings View Controller-->
         <scene sceneID="eZ1-9s-nhG">
             <objects>
                 <viewController id="9Uw-mg-I7m" customClass="SettingsViewController" customModule="AndreDaniloFlavioSamuel" customModuleProvider="target" sceneMemberID="viewController">
@@ -239,7 +239,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8l-vA-C79">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8l-vA-C79">
                                 <rect key="frame" x="210" y="103" width="150" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="XUv-nU-FaH"/>
@@ -251,7 +251,7 @@
                                     <outlet property="delegate" destination="9Uw-mg-I7m" id="uhv-Oh-L3r"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWX-q3-BKC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWX-q3-BKC">
                                 <rect key="frame" x="210" y="145" width="150" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="K6e-dU-h1J"/>
@@ -338,7 +338,6 @@
                             <constraint firstItem="NKY-RH-uy0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fao-JW-jDY" secondAttribute="leading" id="zEi-pz-nm0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ajustes" image="settings" id="hHs-bK-61m"/>
                     <navigationItem key="navigationItem" id="O31-3b-c7S"/>
                     <connections>
                         <outlet property="tableView" destination="oXq-Rc-K9N" id="UUk-dC-src"/>
@@ -348,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gC-FK-uqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3573.5999999999999" y="29.55665024630542"/>
+            <point key="canvasLocation" x="4092" y="804"/>
         </scene>
         <!--Total de Compras-->
         <scene sceneID="alg-b3-4YD">
@@ -448,7 +447,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="eyj-Nu-zbF" kind="relationship" relationship="viewControllers" id="Gzu-SX-696"/>
-                        <segue destination="9Uw-mg-I7m" kind="relationship" relationship="viewControllers" id="zB6-6E-Cf9"/>
+                        <segue destination="sNY-Jf-0ei" kind="relationship" relationship="viewControllers" id="zB6-6E-Cf9"/>
                         <segue destination="RkY-CT-di4" kind="relationship" relationship="viewControllers" id="gH4-VE-9dy"/>
                     </connections>
                 </tabBarController>
@@ -456,9 +455,28 @@
             </objects>
             <point key="canvasLocation" x="2350" y="-890"/>
         </scene>
+        <!--Ajustes-->
+        <scene sceneID="AYd-op-RK6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sNY-Jf-0ei" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Ajustes" image="settings" id="hHs-bK-61m"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iov-XH-y3M">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Uw-mg-I7m" kind="relationship" relationship="rootViewController" id="bfC-ot-2XY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AmF-CO-myp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4092" y="-24"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8R0-x8-LwB"/>
+        <segue reference="Hjr-iS-RZb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bag" width="23" height="23"/>
