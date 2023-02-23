@@ -14,7 +14,6 @@
 		B71C219929A580D400B861C4 /* TotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71C219829A580D400B861C4 /* TotalViewController.swift */; };
 		B71C219D29A5844800B861C4 /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71C219C29A5844800B861C4 /* ShoppingListTableViewController.swift */; };
 		B71C219F29A584A000B861C4 /* AddAndEditProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71C219E29A584A000B861C4 /* AddAndEditProductViewController.swift */; };
-		B71C21A129A58A1000B861C4 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71C21A029A58A1000B861C4 /* SettingTableViewController.swift */; };
 		B71C21A329A5A45500B861C4 /* ViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71C21A229A5A45500B861C4 /* ViewController+CoreData.swift */; };
 		B759FE8229A1A463009044BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B759FE8129A1A463009044BF /* AppDelegate.swift */; };
 		B759FE8429A1A463009044BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B759FE8329A1A463009044BF /* SceneDelegate.swift */; };
@@ -22,6 +21,7 @@
 		B759FE8C29A1A463009044BF /* AndreDaniloFlavioSamuel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B759FE8A29A1A463009044BF /* AndreDaniloFlavioSamuel.xcdatamodeld */; };
 		B759FE8E29A1A464009044BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B759FE8D29A1A464009044BF /* Assets.xcassets */; };
 		B759FE9129A1A464009044BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B759FE8F29A1A464009044BF /* LaunchScreen.storyboard */; };
+		B7BEED7929A7737500EE2317 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BEED7829A7737500EE2317 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,6 @@
 		B71C219829A580D400B861C4 /* TotalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalViewController.swift; sourceTree = "<group>"; };
 		B71C219C29A5844800B861C4 /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
 		B71C219E29A584A000B861C4 /* AddAndEditProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndEditProductViewController.swift; sourceTree = "<group>"; };
-		B71C21A029A58A1000B861C4 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		B71C21A229A5A45500B861C4 /* ViewController+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CoreData.swift"; sourceTree = "<group>"; };
 		B759FE7E29A1A463009044BF /* AndreDaniloFlavioSamuel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndreDaniloFlavioSamuel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B759FE8129A1A463009044BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		B759FE8D29A1A464009044BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B759FE9029A1A464009044BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B759FE9229A1A464009044BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7BEED7829A7737500EE2317 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +74,7 @@
 		B759FE8029A1A463009044BF /* AndreDaniloFlavioSamuel */ = {
 			isa = PBXGroup;
 			children = (
+				B7BEED7829A7737500EE2317 /* SettingsViewController.swift */,
 				B713B2CF29A64FFB007370BB /* UIViewController+TaxesCalculator.swift */,
 				B71C21A229A5A45500B861C4 /* ViewController+CoreData.swift */,
 				B71C219E29A584A000B861C4 /* AddAndEditProductViewController.swift */,
@@ -81,7 +82,6 @@
 				B759FE8129A1A463009044BF /* AppDelegate.swift */,
 				B759FE8329A1A463009044BF /* SceneDelegate.swift */,
 				B71C219829A580D400B861C4 /* TotalViewController.swift */,
-				B71C21A029A58A1000B861C4 /* SettingTableViewController.swift */,
 				B713B2D129A6504A007370BB /* TaxesCalculator.swift */,
 				B71C219C29A5844800B861C4 /* ShoppingListTableViewController.swift */,
 				B759FE8729A1A463009044BF /* Main.storyboard */,
@@ -166,7 +166,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B71C21A129A58A1000B861C4 /* SettingTableViewController.swift in Sources */,
 				B759FE8C29A1A463009044BF /* AndreDaniloFlavioSamuel.xcdatamodeld in Sources */,
 				B713B2D229A6504A007370BB /* TaxesCalculator.swift in Sources */,
 				B71C219F29A584A000B861C4 /* AddAndEditProductViewController.swift in Sources */,
@@ -177,6 +176,7 @@
 				B713B2D429A66F9B007370BB /* StateManager.swift in Sources */,
 				B71C219929A580D400B861C4 /* TotalViewController.swift in Sources */,
 				B71C219D29A5844800B861C4 /* ShoppingListTableViewController.swift in Sources */,
+				B7BEED7929A7737500EE2317 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
