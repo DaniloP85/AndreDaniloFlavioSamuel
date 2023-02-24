@@ -44,16 +44,19 @@ class SettingsViewController: UIViewController {
     
     // MARK: - Methods
     
+    // MARK: setConfigsInScreen
     func setConfigsInScreen(){
         tfDollarQuotation.text = String(tc.dollarQuotation)
         tfIOF.text = String(tc.IOF)
     }
     
+    // MARK: set values in configs
     func setConfigsValue(){
         tc.defaults.set(tc.convertToDouble(tfDollarQuotation.text!), forKey: "dollarQuotation")
         tc.defaults.set(tc.convertToDouble(tfIOF.text!), forKey: "IOF")
     }
     
+    // MARK: Load State
     func loadState() {
         
         let fetchRequest: NSFetchRequest<State> = State.fetchRequest()
@@ -71,6 +74,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    // MARK: Alert Add And Edit
     private func showAlertAddAndEdit(with state: State?) {
         
         let title = state == nil ? "Adicionar" : "Editar"
