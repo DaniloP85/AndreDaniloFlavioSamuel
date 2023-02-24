@@ -52,8 +52,8 @@ class SettingsViewController: UIViewController {
     
     // MARK: set values in configs
     func setConfigsValue(){
-        tc.defaults.set(tc.convertToDouble(tfDollarQuotation.text!), forKey: "dollarQuotation")
-        tc.defaults.set(tc.convertToDouble(tfIOF.text!), forKey: "IOF")
+        tc.IOF = tc.convertToDouble(tfIOF.text!)
+        tc.dollarQuotation = tc.convertToDouble(tfDollarQuotation.text!)
     }
     
     // MARK: Load State

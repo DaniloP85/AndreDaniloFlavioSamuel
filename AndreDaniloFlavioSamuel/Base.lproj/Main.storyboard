@@ -78,7 +78,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j9P-dI-zdc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.8" y="30.295566502463057"/>
+            <point key="canvasLocation" x="1850" y="30"/>
         </scene>
         <!--Cadastrar Produto-->
         <scene sceneID="twH-hT-N2B">
@@ -280,14 +280,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ReY-ug-bZ2">
-                                                    <rect key="frame" x="15.999999999999998" y="14" width="28.333333333333332" height="17"/>
+                                                    <rect key="frame" x="16" y="11.999999999999998" width="33" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9c8-gl-Syy">
-                                                    <rect key="frame" x="291.66666666666669" y="14" width="37.333333333333336" height="17"/>
+                                                    <rect key="frame" x="285.33333333333331" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" systemColor="systemRedColor"/>
@@ -349,7 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gC-FK-uqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4092" y="804"/>
+            <point key="canvasLocation" x="3585" y="30"/>
         </scene>
         <!--Total de Compras-->
         <scene sceneID="alg-b3-4YD">
@@ -417,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1e-BJ-YFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3177" y="-890"/>
+            <point key="canvasLocation" x="3585" y="-1436"/>
         </scene>
         <!--Compras-->
         <scene sceneID="gq5-ie-7kP">
@@ -474,11 +474,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AmF-CO-myp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4092" y="-24"/>
+            <point key="canvasLocation" x="3585" y="-703"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hjr-iS-RZb"/>
+        <segue reference="bfC-ot-2XY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bag" width="23" height="23"/>
