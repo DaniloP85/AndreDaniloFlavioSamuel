@@ -76,8 +76,6 @@ class AddAndEditProductViewController: UIViewController {
     }
     
     @IBAction func addProduct(_ sender: Any) {
-        
-        
         if (product == nil){
             product = Product(context: context)
         }
