@@ -59,7 +59,12 @@ class AddAndEditProductViewController: UIViewController {
         statesManager.loadStates(with: context)
         if (product != nil){
             tfNameProduct.text = product.name
-            tfStateSale.text = product.state?.state
+            if let state = product.state, let index = statesManager.states.firstIndex(of: state){
+                tfStateSale.text = state.state
+                pickerView.selectRow(index, inComponent: 0, animated: false)
+            }
+            
+            
             tfValue.text = String(product.value)
             switchCrediCard.isOn = product.creditCard
             if let image = product.cover as? UIImage {
