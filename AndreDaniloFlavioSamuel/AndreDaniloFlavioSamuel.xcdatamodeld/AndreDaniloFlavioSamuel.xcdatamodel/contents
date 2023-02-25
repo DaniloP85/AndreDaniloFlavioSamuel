@@ -4,7 +4,7 @@
         <attribute name="cover" optional="YES" attributeType="Transformable"/>
         <attribute name="creditCard" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="valeu" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" inverseName="product" inverseEntity="State"/>
     </entity>
     <entity name="State" representedClassName="State" syncable="YES" codeGenerationType="class">

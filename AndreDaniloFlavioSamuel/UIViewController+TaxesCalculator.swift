@@ -12,3 +12,9 @@ extension UIViewController {
         return TaxesCalculator.shared
     }
 }
+
+extension UITableViewCell {
+    var tc: TaxesCalculator {
+        return TaxesCalculator.shared
+    }
+}
