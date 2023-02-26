@@ -83,12 +83,7 @@ class TaxesCalculator {
     
     private init(){
         formatter.usesGroupingSeparator = true
-        if defaults.double(forKey: UserDefaulsKeys.dollarQuotation.rawValue) == 0 {
-            defaults.set(3.2, forKey: UserDefaulsKeys.dollarQuotation.rawValue)
-        }
-        
-        if defaults.double(forKey: UserDefaulsKeys.IOF.rawValue) == 0 {
-            defaults.set(3.2, forKey: UserDefaulsKeys.IOF.rawValue)
-        }
+        dollarQuotation = dollarQuotation == 0  ? 3.2 : dollarQuotation
+        IOF = IOF == 0  ? 6.38 : IOF
     }
 }

@@ -44,16 +44,19 @@ class SettingsViewController: UIViewController {
     
     // MARK: - Methods
     
+    // MARK: setConfigsInScreen
     func setConfigsInScreen(){
         tfDollarQuotation.text = String(tc.dollarQuotation)
         tfIOF.text = String(tc.IOF)
     }
     
+    // MARK: set values in configs
     func setConfigsValue(){
-        tc.defaults.set(tc.convertToDouble(tfDollarQuotation.text!), forKey: "dollarQuotation")
-        tc.defaults.set(tc.convertToDouble(tfIOF.text!), forKey: "IOF")
+        tc.IOF = tc.convertToDouble(tfIOF.text!)
+        tc.dollarQuotation = tc.convertToDouble(tfDollarQuotation.text!)
     }
     
+    // MARK: Load State
     func loadState() {
         
         let fetchRequest: NSFetchRequest<State> = State.fetchRequest()
@@ -71,6 +74,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    // MARK: Alert Add And Edit
     private func showAlertAddAndEdit(with state: State?) {
         
         let title = state == nil ? "Adicionar" : "Editar"
@@ -161,6 +165,13 @@ extension SettingsViewController: NSFetchedResultsControllerDelegate {
     // MARK: NSFetched Delegate
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         tableView.reloadData()
+        
+//        switch type {
+//            case .delete:
+//                break
+//            default:
+//                tableView.reloadData()
+//        }
     }
 }
 

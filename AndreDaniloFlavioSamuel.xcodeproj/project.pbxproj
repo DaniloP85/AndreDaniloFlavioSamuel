@@ -21,6 +21,7 @@
 		B759FE8C29A1A463009044BF /* AndreDaniloFlavioSamuel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B759FE8A29A1A463009044BF /* AndreDaniloFlavioSamuel.xcdatamodeld */; };
 		B759FE8E29A1A464009044BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B759FE8D29A1A464009044BF /* Assets.xcassets */; };
 		B759FE9129A1A464009044BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B759FE8F29A1A464009044BF /* LaunchScreen.storyboard */; };
+		B7784B6E29AA42AB0027C8C4 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7784B6D29AA42AB0027C8C4 /* ProductTableViewCell.swift */; };
 		B7BEED7929A7737500EE2317 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BEED7829A7737500EE2317 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		B759FE8D29A1A464009044BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B759FE9029A1A464009044BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B759FE9229A1A464009044BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7784B6D29AA42AB0027C8C4 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		B7BEED7829A7737500EE2317 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				B7BEED7829A7737500EE2317 /* SettingsViewController.swift */,
+				B7784B6D29AA42AB0027C8C4 /* ProductTableViewCell.swift */,
 				B713B2CF29A64FFB007370BB /* UIViewController+TaxesCalculator.swift */,
 				B71C21A229A5A45500B861C4 /* ViewController+CoreData.swift */,
 				B71C219E29A584A000B861C4 /* AddAndEditProductViewController.swift */,
@@ -171,6 +174,7 @@
 				B71C219F29A584A000B861C4 /* AddAndEditProductViewController.swift in Sources */,
 				B759FE8229A1A463009044BF /* AppDelegate.swift in Sources */,
 				B713B2D029A64FFB007370BB /* UIViewController+TaxesCalculator.swift in Sources */,
+				B7784B6E29AA42AB0027C8C4 /* ProductTableViewCell.swift in Sources */,
 				B71C21A329A5A45500B861C4 /* ViewController+CoreData.swift in Sources */,
 				B759FE8429A1A463009044BF /* SceneDelegate.swift in Sources */,
 				B713B2D429A66F9B007370BB /* StateManager.swift in Sources */,
