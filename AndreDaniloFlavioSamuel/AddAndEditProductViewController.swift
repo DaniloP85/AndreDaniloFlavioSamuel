@@ -97,6 +97,8 @@ class AddAndEditProductViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
+        
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addCoverProduct(_ sender: Any) {

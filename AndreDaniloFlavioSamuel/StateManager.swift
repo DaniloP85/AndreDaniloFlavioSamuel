@@ -22,12 +22,13 @@ class StateManager {
         }
     }
     
-    func deleteConsole(index: Int, context: NSManagedObjectContext){
+    func deleteState(index: Int, context: NSManagedObjectContext){
         let state = states[index]
         context.delete(state)
         
         do {
             try context.save()
+            states.remove(at: index)
         }catch{
             print(error.localizedDescription)
         }
