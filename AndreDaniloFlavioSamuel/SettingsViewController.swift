@@ -154,6 +154,8 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let state = fetchedResultController.object(at: indexPath)
+//            let io = state.product
+//            print("\(state.product)")
             context.delete(state)
             try? context.save()
         }
