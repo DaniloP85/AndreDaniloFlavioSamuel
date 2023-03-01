@@ -421,6 +421,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Total de Compras" image="bag" id="fXE-HZ-A3M"/>
+                    <connections>
+                        <outlet property="lbTotalDollar" destination="LC2-Os-SgO" id="XZm-9H-6fS"/>
+                        <outlet property="lbTotalReal" destination="VwD-iP-jqj" id="xlf-aB-n0j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1e-BJ-YFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

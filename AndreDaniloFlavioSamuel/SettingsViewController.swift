@@ -154,10 +154,14 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let state = fetchedResultController.object(at: indexPath)
-//            let io = state.product
-//            print("\(state.product)")
-            context.delete(state)
-            try? context.save()
+            
+            if state.product!.count > 1 {
+                print("o que fazer???")
+                print("quantidade de produtos com o mesmo estado: \(state.product?.count)")
+            }else{
+                context.delete(state)
+                try? context.save()
+            }
         }
     }
 }
