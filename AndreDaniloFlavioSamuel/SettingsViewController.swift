@@ -154,6 +154,8 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let state = fetchedResultController.object(at: indexPath)
+//            let io = state.product
+//            print("\(state.product)")
             context.delete(state)
             try? context.save()
         }
@@ -164,14 +166,15 @@ extension SettingsViewController: NSFetchedResultsControllerDelegate {
     
     // MARK: NSFetched Delegate
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        tableView.reloadData()
-        
-//        switch type {
-//            case .delete:
-//                break
-//            default:
-//                tableView.reloadData()
-//        }
+        switch type {
+            case .delete:
+                if let indexPath = indexPath {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+                break
+            default:
+                tableView.reloadData()
+        }
     }
 }
 
