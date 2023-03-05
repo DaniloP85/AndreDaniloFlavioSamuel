@@ -79,10 +79,6 @@ class AddAndEditProductViewController: UIViewController {
     }
     
     @IBAction func addProduct(_ sender: Any) {
-        if (product == nil){
-            product = Product(context: context)
-        }
-        
         if tfNameProduct.text!.isEmpty {
             alertEmpty(title:"Nome do produto", message:"Deve ser preenchido")
             return
@@ -106,6 +102,10 @@ class AddAndEditProductViewController: UIViewController {
             return
         }
         
+        if (product == nil){
+            product = Product(context: context)
+        }
+        
         product.name = tfNameProduct.text
         product.creditCard = switchCrediCard.isOn
         product.value = tc.convertToDouble(tfValue.text!)
@@ -126,7 +126,7 @@ class AddAndEditProductViewController: UIViewController {
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
         NSLog("The \"OK\" alert occured.")
         }))
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func addCoverProduct(_ sender: Any) {
