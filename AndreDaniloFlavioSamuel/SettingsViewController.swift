@@ -156,8 +156,13 @@ extension SettingsViewController: UITableViewDelegate {
             let state = fetchedResultController.object(at: indexPath)
             
             if state.product!.count > 1 {
-                print("o que fazer???")
-                print("quantidade de produtos com o mesmo estado: \(state.product?.count)")
+                for pr in state.product! {
+                    context.delete(pr as! NSManagedObject)
+                    try? context.save()
+                }
+                
+                context.delete(state)
+                try? context.save()
             }else{
                 context.delete(state)
                 try? context.save()

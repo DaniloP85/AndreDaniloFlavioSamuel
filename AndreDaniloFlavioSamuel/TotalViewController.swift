@@ -40,7 +40,7 @@ class TotalViewController: UIViewController {
             }
         }
         
-        lbTotalReal.text = tc.getFormattedValue(of: totalReal, withCurrency: "R$ ")
-        lbTotalDollar.text = tc.getFormattedValue(of: totalDollar, withCurrency: "U$ ")
+        lbTotalReal.text = tc.getFormattedValue(of: totalReal, withCurrency: "")
+        lbTotalDollar.text = tc.getFormattedValue(of: totalDollar, withCurrency: "")
     }
 }

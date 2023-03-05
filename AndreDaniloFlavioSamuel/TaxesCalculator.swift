@@ -18,22 +18,7 @@ class TaxesCalculator {
    
     static let shared = TaxesCalculator()
     
-    var stateTax: Double = 7.0
-    var shoppingValue: Double = 0
-    
     let formatter = NumberFormatter()
-    
-    var shoppingValueInReal: Double {
-        return shoppingValue * dollarQuotation
-    }
-    
-    var stateTaxValue: Double {
-        return shoppingValue * stateTax/100
-    }
-    
-    var iofValue: Double {
-        return (shoppingValue+stateTax)*IOF/100
-    }
     
     var dollarQuotation: Double {
         get {
@@ -55,18 +40,10 @@ class TaxesCalculator {
         }
     }
     
-    func calculate(usingCreditCard: Bool) -> Double {
-        var finalValue = shoppingValue + stateTaxValue
-        if usingCreditCard{
-            finalValue += iofValue
-        }
-        
-        return 0
-    }
     
     func convertToDouble(_ string: String) -> Double{
         formatter.numberStyle = .none
-        return formatter.number(from: string.replacingOccurrences(of: ".", with: ","))!.doubleValue
+        return string.isEmpty ? 0 : formatter.number(from: string.replacingOccurrences(of: ".", with: ","))!.doubleValue
     }
     
     func getString(of value: Double) -> String {

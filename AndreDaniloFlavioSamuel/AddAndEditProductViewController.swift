@@ -18,6 +18,7 @@ class AddAndEditProductViewController: UIViewController {
     @IBOutlet weak var btAddEdit: UIButton!
     
     var product: Product!
+    var isLoadedImage: Bool = true
     
     lazy var pickerView: UIPickerView = {
         let pickerView = UIPickerView()
@@ -69,6 +70,8 @@ class AddAndEditProductViewController: UIViewController {
             switchCrediCard.isOn = product.creditCard
             if let image = product.cover as? UIImage {
                 ivCover.image = image
+                ivCover.contentMode = .scaleAspectFit
+                isLoadedImage = false
             }
             btAddEdit.setTitle("EDITAR", for: .normal)
             title = "Editar Produto"
@@ -80,25 +83,50 @@ class AddAndEditProductViewController: UIViewController {
             product = Product(context: context)
         }
         
-        product.name = tfNameProduct.text
+        if tfNameProduct.text!.isEmpty {
+            alertEmpty(title:"Nome do produto", message:"Deve ser preenchido")
+            return
+        }
+        
+        if isLoadedImage {
+            alertEmpty(title:"Imagem do produto", message:"Escolha uma imagem")
+            return
+        }
         
         if !tfStateSale.text!.isEmpty {
             let state = statesManager.states[pickerView.selectedRow(inComponent: 0)]
             product.state = state
+        } else {
+            alertEmpty(title:"Escolha um estado", message:"Deve ser preenchido")
+            return
         }
         
+        if tfValue.text!.isEmpty {
+            alertEmpty(title:"Valor do produto", message:"Deve ser preenchido")
+            return
+        }
+        
+        product.name = tfNameProduct.text
         product.creditCard = switchCrediCard.isOn
         product.value = tc.convertToDouble(tfValue.text!)
         product.cover = ivCover.image
         
         do {
             try context.save()
-            print("adicionou, o que fazer agora?")
         } catch {
+            print("Algo deu errado...")
             print(error.localizedDescription)
         }
         
         navigationController?.popViewController(animated: true)
+    }
+    
+    func alertEmpty(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func addCoverProduct(_ sender: Any) {
@@ -163,6 +191,8 @@ extension AddAndEditProductViewController: UIImagePickerControllerDelegate & UIN
         
         if let image = info[.originalImage] as? UIImage {
             ivCover.image = image
+            ivCover.contentMode = .scaleAspectFit
+            isLoadedImage = false
         }
         
         dismiss(animated: true)
