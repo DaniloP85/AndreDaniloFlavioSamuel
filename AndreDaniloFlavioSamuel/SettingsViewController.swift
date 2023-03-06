@@ -44,19 +44,16 @@ class SettingsViewController: UIViewController {
     
     // MARK: - Methods
     
-    // MARK: setConfigsInScreen
     func setConfigsInScreen(){
-        tfDollarQuotation.text = String(tc.dollarQuotation)
-        tfIOF.text = String(tc.IOF)
+        tfDollarQuotation.text = String(userDefauls.dollarQuotation)
+        tfIOF.text = String(userDefauls.IOF)
     }
-    
-    // MARK: set values in configs
+
     func setConfigsValue(){
-        tc.IOF = tc.convertToDouble(tfIOF.text!)
-        tc.dollarQuotation = tc.convertToDouble(tfDollarQuotation.text!)
+        userDefauls.IOF = formatterValues.convertToDouble(tfIOF.text!)
+        userDefauls.dollarQuotation = formatterValues.convertToDouble(tfDollarQuotation.text!)
     }
     
-    // MARK: Load State
     func loadState() {
         
         let fetchRequest: NSFetchRequest<State> = State.fetchRequest()
@@ -74,7 +71,6 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    // MARK: Alert Add And Edit
     private func showAlertAddAndEdit(with state: State?) {
         
         let title = state == nil ? "Adicionar" : "Editar"
@@ -91,7 +87,7 @@ class SettingsViewController: UIViewController {
             textField.placeholder = "Imposto"
             textField.keyboardType = .decimalPad
             if let taxes = state?.tax{
-                textField.text = self.tc.getString(of: taxes)
+                textField.text = self.formatterValues.getString(of: taxes)
             }
         }
         
@@ -101,7 +97,7 @@ class SettingsViewController: UIViewController {
             state.state = stateName!.isEmpty ? "Nome não informado" : stateName
             
             guard let taxes = alert.textFields?.last?.text else { return }
-            state.tax = self.tc.convertToDouble(taxes)
+            state.tax = self.formatterValues.convertToDouble(taxes)
             
             do {
                 try self.context.save()
@@ -118,11 +114,8 @@ class SettingsViewController: UIViewController {
     }
 }
 
-// MARK: - Extension
-
 extension SettingsViewController: UITableViewDataSource {
     
-    // MARK: Table view data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = fetchedResultController.fetchedObjects?.count ?? 0
         tableView.backgroundView = count == 0 ? label : nil
@@ -145,7 +138,6 @@ extension SettingsViewController: UITableViewDataSource {
 
 extension SettingsViewController: UITableViewDelegate {
     
-    // MARK: Table view delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         state = fetchedResultController?.object(at: indexPath)
@@ -174,7 +166,6 @@ extension SettingsViewController: UITableViewDelegate {
 
 extension SettingsViewController: NSFetchedResultsControllerDelegate {
     
-    // MARK: NSFetched Delegate
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
             case .delete:
@@ -189,7 +180,6 @@ extension SettingsViewController: NSFetchedResultsControllerDelegate {
 }
 
 extension SettingsViewController: UITextFieldDelegate{
-    // MARK: UITextFieldDelegate
     func textFieldDidEndEditing(_ textField: UITextField) {
         setConfigsValue()
     }

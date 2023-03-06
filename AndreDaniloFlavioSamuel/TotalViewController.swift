@@ -36,15 +36,15 @@ class TotalViewController: UIViewController {
         for product in productManager.products {
             let dolarPlusTax = ((product.value * (product.state!.tax/100)) + product.value)
             totalDollar = totalDollar + dolarPlusTax
-            let conversionToReal = (dolarPlusTax * tc.dollarQuotation)
+            let conversionToReal = (dolarPlusTax * userDefauls.dollarQuotation)
             totalReal = totalReal + conversionToReal
             if (product.creditCard) {
-                let realPlusIOF = (conversionToReal * (tc.IOF/100))
+                let realPlusIOF = (conversionToReal * (userDefauls.IOF/100))
                 totalReal = totalReal + realPlusIOF
             }
         }
         
-        lbTotalReal.text = tc.getFormattedValue(of: totalReal, withCurrency: "")
-        lbTotalDollar.text = tc.getFormattedValue(of: totalDollar, withCurrency: "")
+        lbTotalReal.text = formatterValues.getFormattedValue(of: totalReal, withCurrency: "")
+        lbTotalDollar.text = formatterValues.getFormattedValue(of: totalDollar, withCurrency: "")
     }
 }

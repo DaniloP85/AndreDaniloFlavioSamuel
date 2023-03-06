@@ -120,7 +120,7 @@ class AddAndEditProductViewController: UIViewController {
         
         product.name = tfNameProduct.text
         product.creditCard = switchCrediCard.isOn
-        product.value = tc.convertToDouble(tfValue.text!)
+        product.value = formatterValues.convertToDouble(tfValue.text!)
         product.cover = ivCover.image
         
         do {

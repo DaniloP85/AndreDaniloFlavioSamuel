@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B713B2D029A64FFB007370BB /* UIViewController+TaxesCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B713B2CF29A64FFB007370BB /* UIViewController+TaxesCalculator.swift */; };
-		B713B2D229A6504A007370BB /* TaxesCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B713B2D129A6504A007370BB /* TaxesCalculator.swift */; };
 		B713B2D429A66F9B007370BB /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B713B2D329A66F9B007370BB /* StateManager.swift */; };
 		B713B2D629A69752007370BB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B713B2D529A69752007370BB /* Settings.bundle */; };
 		B71C219929A580D400B861C4 /* TotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71C219829A580D400B861C4 /* TotalViewController.swift */; };
@@ -24,11 +22,15 @@
 		B759FE9129A1A464009044BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B759FE8F29A1A464009044BF /* LaunchScreen.storyboard */; };
 		B7784B6E29AA42AB0027C8C4 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7784B6D29AA42AB0027C8C4 /* ProductTableViewCell.swift */; };
 		B7BEED7929A7737500EE2317 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BEED7829A7737500EE2317 /* SettingsViewController.swift */; };
+		B7CE1FA929B67C1E0080EEB7 /* UserDefauls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE1FA829B67C1E0080EEB7 /* UserDefauls.swift */; };
+		B7CE1FAB29B67CE70080EEB7 /* UIViewController+UserDefauls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE1FAA29B67CE70080EEB7 /* UIViewController+UserDefauls.swift */; };
+		B7CE1FAD29B67D740080EEB7 /* UITableViewCell+UserDefauls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE1FAC29B67D740080EEB7 /* UITableViewCell+UserDefauls.swift */; };
+		B7CE1FAF29B67E080080EEB7 /* FormatterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE1FAE29B67E080080EEB7 /* FormatterValues.swift */; };
+		B7CE1FB129B6807E0080EEB7 /* UITableViewCell+FormatterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE1FB029B6807E0080EEB7 /* UITableViewCell+FormatterValues.swift */; };
+		B7CE1FB329B6822E0080EEB7 /* UIViewController+FormatterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE1FB229B6822E0080EEB7 /* UIViewController+FormatterValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B713B2CF29A64FFB007370BB /* UIViewController+TaxesCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TaxesCalculator.swift"; sourceTree = "<group>"; };
-		B713B2D129A6504A007370BB /* TaxesCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxesCalculator.swift; sourceTree = "<group>"; };
 		B713B2D329A66F9B007370BB /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		B713B2D529A69752007370BB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B71C219829A580D400B861C4 /* TotalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +48,12 @@
 		B759FE9229A1A464009044BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7784B6D29AA42AB0027C8C4 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		B7BEED7829A7737500EE2317 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B7CE1FA829B67C1E0080EEB7 /* UserDefauls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefauls.swift; sourceTree = "<group>"; };
+		B7CE1FAA29B67CE70080EEB7 /* UIViewController+UserDefauls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UserDefauls.swift"; sourceTree = "<group>"; };
+		B7CE1FAC29B67D740080EEB7 /* UITableViewCell+UserDefauls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+UserDefauls.swift"; sourceTree = "<group>"; };
+		B7CE1FAE29B67E080080EEB7 /* FormatterValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterValues.swift; sourceTree = "<group>"; };
+		B7CE1FB029B6807E0080EEB7 /* UITableViewCell+FormatterValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+FormatterValues.swift"; sourceTree = "<group>"; };
+		B7CE1FB229B6822E0080EEB7 /* UIViewController+FormatterValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+FormatterValues.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,16 +87,20 @@
 			isa = PBXGroup;
 			children = (
 				B7BEED7829A7737500EE2317 /* SettingsViewController.swift */,
-				B7784B6D29AA42AB0027C8C4 /* ProductTableViewCell.swift */,
-				B713B2CF29A64FFB007370BB /* UIViewController+TaxesCalculator.swift */,
-				B71C21A229A5A45500B861C4 /* ViewController+CoreData.swift */,
+				B71C219C29A5844800B861C4 /* ShoppingListTableViewController.swift */,
 				B71C219E29A584A000B861C4 /* AddAndEditProductViewController.swift */,
+				B71C219829A580D400B861C4 /* TotalViewController.swift */,
+				B7784B6D29AA42AB0027C8C4 /* ProductTableViewCell.swift */,
+				B7CE1FAA29B67CE70080EEB7 /* UIViewController+UserDefauls.swift */,
+				B7CE1FAC29B67D740080EEB7 /* UITableViewCell+UserDefauls.swift */,
+				B7CE1FB029B6807E0080EEB7 /* UITableViewCell+FormatterValues.swift */,
+				B7CE1FB229B6822E0080EEB7 /* UIViewController+FormatterValues.swift */,
+				B71C21A229A5A45500B861C4 /* ViewController+CoreData.swift */,
+				B7CE1FA829B67C1E0080EEB7 /* UserDefauls.swift */,
+				B7CE1FAE29B67E080080EEB7 /* FormatterValues.swift */,
 				B713B2D329A66F9B007370BB /* StateManager.swift */,
 				B759FE8129A1A463009044BF /* AppDelegate.swift */,
 				B759FE8329A1A463009044BF /* SceneDelegate.swift */,
-				B71C219829A580D400B861C4 /* TotalViewController.swift */,
-				B713B2D129A6504A007370BB /* TaxesCalculator.swift */,
-				B71C219C29A5844800B861C4 /* ShoppingListTableViewController.swift */,
 				B756486B29AF95A900CCD334 /* ProductManager.swift */,
 				B759FE8729A1A463009044BF /* Main.storyboard */,
 				B759FE8D29A1A464009044BF /* Assets.xcassets */,
@@ -173,18 +185,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				B759FE8C29A1A463009044BF /* AndreDaniloFlavioSamuel.xcdatamodeld in Sources */,
-				B713B2D229A6504A007370BB /* TaxesCalculator.swift in Sources */,
+				B7CE1FAD29B67D740080EEB7 /* UITableViewCell+UserDefauls.swift in Sources */,
 				B71C219F29A584A000B861C4 /* AddAndEditProductViewController.swift in Sources */,
 				B759FE8229A1A463009044BF /* AppDelegate.swift in Sources */,
-				B713B2D029A64FFB007370BB /* UIViewController+TaxesCalculator.swift in Sources */,
 				B7784B6E29AA42AB0027C8C4 /* ProductTableViewCell.swift in Sources */,
+				B7CE1FAF29B67E080080EEB7 /* FormatterValues.swift in Sources */,
+				B7CE1FAB29B67CE70080EEB7 /* UIViewController+UserDefauls.swift in Sources */,
 				B71C21A329A5A45500B861C4 /* ViewController+CoreData.swift in Sources */,
 				B759FE8429A1A463009044BF /* SceneDelegate.swift in Sources */,
 				B713B2D429A66F9B007370BB /* StateManager.swift in Sources */,
+				B7CE1FB329B6822E0080EEB7 /* UIViewController+FormatterValues.swift in Sources */,
 				B71C219929A580D400B861C4 /* TotalViewController.swift in Sources */,
 				B71C219D29A5844800B861C4 /* ShoppingListTableViewController.swift in Sources */,
+				B7CE1FB129B6807E0080EEB7 /* UITableViewCell+FormatterValues.swift in Sources */,
 				B756486C29AF95A900CCD334 /* ProductManager.swift in Sources */,
 				B7BEED7929A7737500EE2317 /* SettingsViewController.swift in Sources */,
+				B7CE1FA929B67C1E0080EEB7 /* UserDefauls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

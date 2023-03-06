@@ -29,7 +29,7 @@ class ProductTableViewCell: UITableViewCell {
     // MARK: - Methods
     func prepare(with product: Product){
         lbTitle.text = product.name ?? ""
-        lbValue.text = tc.getFormattedValue(of: product.value, withCurrency: "U$")
+        lbValue.text = formatterValues.getFormattedValue(of: product.value, withCurrency: "U$")
         if let image = product.cover as? UIImage {
             ivCover.image = image
         }else{
