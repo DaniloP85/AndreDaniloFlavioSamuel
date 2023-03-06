@@ -57,7 +57,7 @@ class SettingsViewController: UIViewController {
     func loadState() {
         
         let fetchRequest: NSFetchRequest<State> = State.fetchRequest()
-        let sortDescritor = NSSortDescriptor(key: "state", ascending: true)
+        let sortDescritor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescritor]
         
         fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -78,7 +78,7 @@ class SettingsViewController: UIViewController {
         
         alert.addTextField { (textField) in
             textField.placeholder = "Nome do estado"
-            if let state = state?.state{
+            if let state = state?.name{
                 textField.text = state
             }
         }
@@ -94,7 +94,7 @@ class SettingsViewController: UIViewController {
         alert.addAction(UIAlertAction(title: title, style: .default, handler: { (action) in
             let state = state ?? State(context: self.context)
             let stateName = alert.textFields?.first?.text
-            state.state = stateName!.isEmpty ? "Nome não informado" : stateName
+            state.name = stateName!.isEmpty ? "Nome não informado" : stateName
             
             guard let taxes = alert.textFields?.last?.text else { return }
             state.tax = self.formatterValues.convertToDouble(taxes)
@@ -129,7 +129,7 @@ extension SettingsViewController: UITableViewDataSource {
             return cell
         }
 
-        cell.textLabel?.text = state.state
+        cell.textLabel?.text = state.name
         cell.detailTextLabel?.text = String(state.tax)
 
         return cell

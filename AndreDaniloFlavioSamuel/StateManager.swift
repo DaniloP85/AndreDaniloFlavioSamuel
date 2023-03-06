@@ -13,7 +13,7 @@ class StateManager {
     
     func loadStates(with context: NSManagedObjectContext){
         let fetchRequest: NSFetchRequest<State> = State.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "state", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         do {
             states = try context.fetch(fetchRequest)

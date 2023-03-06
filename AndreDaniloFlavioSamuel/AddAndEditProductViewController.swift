@@ -56,7 +56,7 @@ class AddAndEditProductViewController: UIViewController {
         if (product != nil){
             tfNameProduct.text = product.name
             if let state = product.state, let index = statesManager.states.firstIndex(of: state){
-                tfStateSale.text = state.state
+                tfStateSale.text = state.name
                 pickerView.selectRow(index, inComponent: 0, animated: false)
             }
             
@@ -79,7 +79,7 @@ class AddAndEditProductViewController: UIViewController {
     }
     
     @objc func done(){
-        tfStateSale.text = statesManager.states[pickerView.selectedRow(inComponent: 0)].state
+        tfStateSale.text = statesManager.states[pickerView.selectedRow(inComponent: 0)].name
         cancel()
     }
     
@@ -196,7 +196,7 @@ extension AddAndEditProductViewController: UIPickerViewDelegate, UIPickerViewDat
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let state = statesManager.states[row]
-        return state.state
+        return state.name
     }
 }
 
