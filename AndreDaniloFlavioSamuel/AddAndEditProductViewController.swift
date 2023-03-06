@@ -10,6 +10,7 @@ import CoreData
 
 class AddAndEditProductViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var tfNameProduct: UITextField!
     @IBOutlet weak var ivCover: UIImageView!
     @IBOutlet weak var tfStateSale: UITextField!
@@ -17,6 +18,7 @@ class AddAndEditProductViewController: UIViewController {
     @IBOutlet weak var switchCrediCard: UISwitch!
     @IBOutlet weak var btAddEdit: UIButton!
     
+    // MARK: - Properties
     var product: Product!
     var isLoadedImage: Bool = true
     
@@ -29,6 +31,8 @@ class AddAndEditProductViewController: UIViewController {
     }()
     
     var statesManager = StateManager.shared
+   
+    // MARK: - Super Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,15 +48,6 @@ class AddAndEditProductViewController: UIViewController {
         
         tfStateSale.inputView = pickerView
         tfStateSale.inputAccessoryView = toolbar
-    }
-       
-    @objc func cancel(){
-        tfStateSale.resignFirstResponder()
-    }
-    
-    @objc func done(){
-        tfStateSale.text = statesManager.states[pickerView.selectedRow(inComponent: 0)].state
-        cancel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,7 +72,22 @@ class AddAndEditProductViewController: UIViewController {
             title = "Editar Produto"
         }
     }
+    // MARK: - Buttons pickerView
     
+    @objc func cancel(){
+        tfStateSale.resignFirstResponder()
+    }
+    
+    @objc func done(){
+        tfStateSale.text = statesManager.states[pickerView.selectedRow(inComponent: 0)].state
+        cancel()
+    }
+    
+    // MARK: - IBActions
+    
+    
+    
+    // MARK: button addProduct
     @IBAction func addProduct(_ sender: Any) {
         if tfNameProduct.text!.isEmpty {
             alertEmpty(title:"Nome do produto", message:"Deve ser preenchido")
@@ -123,14 +133,7 @@ class AddAndEditProductViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func alertEmpty(title: String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-        NSLog("The \"OK\" alert occured.")
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-    
+    // MARK: button add CoverProduct
     @IBAction func addCoverProduct(_ sender: Any) {
         
         let alert = UIAlertController(title: "Selecionar pôster", message: "De onde você deseja escolher o pôster?", preferredStyle: .actionSheet)
@@ -158,6 +161,20 @@ class AddAndEditProductViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    // MARK: - Methods
+    
+    
+    
+    // MARK: alertEmpty
+    func alertEmpty(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"OK\" alert occured.")
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: selectPictureFrom
     private func selectPictureFrom(_ sourceType: UIImagePickerController.SourceType) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = sourceType
@@ -166,6 +183,11 @@ class AddAndEditProductViewController: UIViewController {
     }
 }
 
+// MARK: - Extension
+
+
+
+// MARK: Picker view DataSource and Delegate
 extension AddAndEditProductViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -182,13 +204,14 @@ extension AddAndEditProductViewController: UIPickerViewDelegate, UIPickerViewDat
 }
 
 extension AddAndEditProductViewController: NSFetchedResultsControllerDelegate {
+    // MARK: NSFetched Delegate
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
-//        tableView.reloadData()
     }
 }
 
 extension AddAndEditProductViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    // MARK: UIImagePicker Delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[.originalImage] as? UIImage {
