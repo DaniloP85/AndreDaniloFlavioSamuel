@@ -89,10 +89,7 @@ class AddAndEditProductViewController: UIViewController {
             return
         }
         
-        if !tfStateSale.text!.isEmpty {
-            let state = statesManager.states[pickerView.selectedRow(inComponent: 0)]
-            product.state = state
-        } else {
+        if tfStateSale.text!.isEmpty {
             alertEmpty(title:"Escolha um estado", message:"Deve ser preenchido")
             return
         }
@@ -104,6 +101,11 @@ class AddAndEditProductViewController: UIViewController {
         
         if (product == nil){
             product = Product(context: context)
+        }
+        
+        if !tfStateSale.text!.isEmpty {
+            let state = statesManager.states[pickerView.selectedRow(inComponent: 0)]
+            product.state = state
         }
         
         product.name = tfNameProduct.text

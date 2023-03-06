@@ -27,7 +27,6 @@ class ProductTableViewCell: UITableViewCell {
     
     func prepare(with product: Product){
         lbTitle.text = product.name ?? ""
-//        lbStateName.text = product.state?.state
         lbValue.text = tc.getFormattedValue(of: product.value, withCurrency: "U$")
         if let image = product.cover as? UIImage {
             ivCover.image = image

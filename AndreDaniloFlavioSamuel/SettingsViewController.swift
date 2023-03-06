@@ -97,7 +97,8 @@ class SettingsViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: title, style: .default, handler: { (action) in
             let state = state ?? State(context: self.context)
-            state.state = alert.textFields?.first?.text
+            let stateName = alert.textFields?.first?.text
+            state.state = stateName!.isEmpty ? "Nome não informado" : stateName
             
             guard let taxes = alert.textFields?.last?.text else { return }
             state.tax = self.tc.convertToDouble(taxes)
