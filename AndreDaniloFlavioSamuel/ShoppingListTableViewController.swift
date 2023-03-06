@@ -45,7 +45,7 @@ class ShoppingListTableViewController: UITableViewController {
         }
     }
 
-    // MARK: - Table view data source
+    // MARK: - Override Table view
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = fetchedResultController.fetchedObjects?.count ?? 0

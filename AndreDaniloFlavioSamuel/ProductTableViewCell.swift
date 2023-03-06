@@ -9,11 +9,12 @@ import UIKit
 
 class ProductTableViewCell: UITableViewCell {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var lbValue: UILabel!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var ivCover: UIImageView!
-    @IBOutlet weak var lbStateName: UILabel!
-    
+
+    // MARK: - Super Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,6 +26,7 @@ class ProductTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Methods
     func prepare(with product: Product){
         lbTitle.text = product.name ?? ""
         lbValue.text = tc.getFormattedValue(of: product.value, withCurrency: "U$")

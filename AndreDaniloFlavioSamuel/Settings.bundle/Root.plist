@@ -28,7 +28,7 @@
 			<key>Key</key>
 			<string>dollarQuotation</string>
 			<key>DefaultValue</key>
-			<string>3.2</string>
+			<string>5.21</string>
 			<key>KeyboardType</key>
 			<string>NumberPad</string>
 		</dict>

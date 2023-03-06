@@ -9,11 +9,14 @@ import UIKit
 
 class TotalViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var lbTotalReal: UILabel!
     @IBOutlet weak var lbTotalDollar: UILabel!
     
+    // MARK: - Properties
     var productManager = ProductManager.shared
-
+    
+    // MARK: - Super Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         loadState()
@@ -24,6 +27,7 @@ class TotalViewController: UIViewController {
         loadState()
     }
     
+    // MARK: - Methods
     func loadState() {
         productManager.loadProduct(with: context, key: "name")
         var totalDollar: Double = 0

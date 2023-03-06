@@ -61,6 +61,7 @@
                                         <constraint firstItem="FRK-Wv-Zc3" firstAttribute="leading" secondItem="grX-KV-Rxc" secondAttribute="trailing" constant="12" id="zrX-Ez-syV"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="ivCover" destination="grX-KV-Rxc" id="LUy-CG-fQt"/>
                                     <outlet property="lbTitle" destination="FRK-Wv-Zc3" id="0Cx-C3-4a0"/>

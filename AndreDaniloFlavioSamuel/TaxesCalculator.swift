@@ -60,7 +60,7 @@ class TaxesCalculator {
     
     private init(){
         formatter.usesGroupingSeparator = true
-        dollarQuotation = dollarQuotation == 0  ? 3.2 : dollarQuotation
+        dollarQuotation = dollarQuotation == 0  ? 5.21 : dollarQuotation
         IOF = IOF == 0  ? 6.38 : IOF
     }
 }

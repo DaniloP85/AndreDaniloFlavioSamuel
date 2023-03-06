@@ -163,9 +163,7 @@ class AddAndEditProductViewController: UIViewController {
     
     // MARK: - Methods
     
-    
-    
-    // MARK: alertEmpty
+
     func alertEmpty(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
@@ -174,7 +172,6 @@ class AddAndEditProductViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    // MARK: selectPictureFrom
     private func selectPictureFrom(_ sourceType: UIImagePickerController.SourceType) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = sourceType
@@ -223,5 +220,3 @@ extension AddAndEditProductViewController: UIImagePickerControllerDelegate & UIN
         dismiss(animated: true)
     }
 }
-
-
