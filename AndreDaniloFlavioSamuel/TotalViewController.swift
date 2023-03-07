@@ -32,8 +32,10 @@ class TotalViewController: UIViewController {
         productManager.loadProduct(with: context, key: "name")
         var totalDollar: Double = 0
         var totalReal: Double = 0
+        var valuewithouttax: Double = 0
         
         for product in productManager.products {
+            valuewithouttax = (valuewithouttax + product.value)
             let dolarPlusTax = ((product.value * (product.state!.tax/100)) + product.value)
             totalDollar = totalDollar + dolarPlusTax
             
@@ -48,6 +50,6 @@ class TotalViewController: UIViewController {
         }
         
         lbTotalReal.text = formatterValues.getFormattedValue(of: totalReal, withCurrency: "")
-        lbTotalDollar.text = formatterValues.getFormattedValue(of: totalDollar, withCurrency: "")
+        lbTotalDollar.text = formatterValues.getFormattedValue(of: valuewithouttax, withCurrency: "")
     }
 }
