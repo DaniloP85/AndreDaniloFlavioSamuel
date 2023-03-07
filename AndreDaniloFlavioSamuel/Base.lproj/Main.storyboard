@@ -61,6 +61,7 @@
                                         <constraint firstItem="FRK-Wv-Zc3" firstAttribute="leading" secondItem="grX-KV-Rxc" secondAttribute="trailing" constant="12" id="zrX-Ez-syV"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="ivCover" destination="grX-KV-Rxc" id="LUy-CG-fQt"/>
                                     <outlet property="lbTitle" destination="FRK-Wv-Zc3" id="0Cx-C3-4a0"/>
@@ -74,7 +75,7 @@
                             <outlet property="delegate" destination="W5U-MV-5ZM" id="4dW-c5-Gwm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Lista de compras" id="gto-Cw-ngf">
+                    <navigationItem key="navigationItem" title="Lista de compras" largeTitleDisplayMode="never" id="gto-Cw-ngf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rM6-ME-VjE">
                             <connections>
                                 <segue destination="MCO-0w-4id" kind="show" identifier="newProductSegue" id="MMj-fc-6Md"/>
@@ -102,7 +103,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift" translatesAutoresizingMaskIntoConstraints="NO" id="scK-pf-67b">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift" translatesAutoresizingMaskIntoConstraints="NO" id="scK-pf-67b">
                                 <rect key="frame" x="15" y="162" width="345" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="UGW-Wf-94D"/>
@@ -421,10 +422,14 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Total de Compras" image="bag" id="fXE-HZ-A3M"/>
+                    <connections>
+                        <outlet property="lbTotalDollar" destination="LC2-Os-SgO" id="XZm-9H-6fS"/>
+                        <outlet property="lbTotalReal" destination="VwD-iP-jqj" id="xlf-aB-n0j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1e-BJ-YFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3585" y="-1436"/>
+            <point key="canvasLocation" x="3585" y="-1644"/>
         </scene>
         <!--Compras-->
         <scene sceneID="gq5-ie-7kP">
@@ -452,7 +457,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <tabBarAppearance key="scrollEdgeAppearance"/>
+                        <tabBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="selectionIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tabBarAppearance>
                     </tabBar>
                     <connections>
                         <segue destination="eyj-Nu-zbF" kind="relationship" relationship="viewControllers" id="Gzu-SX-696"/>
@@ -462,7 +470,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azj-GA-hoj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2350" y="-890"/>
+            <point key="canvasLocation" x="1849" y="-1153"/>
         </scene>
         <!--Ajustes-->
         <scene sceneID="AYd-op-RK6">
@@ -481,11 +489,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AmF-CO-myp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3585" y="-703"/>
+            <point key="canvasLocation" x="3585" y="-825"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hjr-iS-RZb"/>
+        <segue reference="bfC-ot-2XY"/>
         <segue reference="cHa-MZ-56d"/>
     </inferredMetricsTieBreakers>
     <resources>

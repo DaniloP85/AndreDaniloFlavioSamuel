@@ -17,10 +17,17 @@ Register products that you bought in the United States and you will be able to s
 [Core Data](https://developer.apple.com/documentation/coredata)
 ## Authors
 
-#### [André](https://github.com/AndCordeiro)
-#### [Danilo](https://www.linkedin.com/in/danilopsnts)
-#### [Flávio](https://github.com/flavio-fgjj)
-#### [Samuel](https://github.com/SamuelDevMobile)
+| RM | Aluno |
+| --- | --- |
+| 345795 | [André](https://github.com/AndCordeiro) |
+| 344732 | [Danilo](https://www.linkedin.com/in/danilopsnts) |
+| 345141 | [Flávio](https://github.com/flavio-fgjj) |
+| 344055 | [Samuel](https://github.com/SamuelDevMobile)
+
+## Repo
+```
+https://github.com/DaniloP85/AndreDaniloFlavioSamuel
+```
 
 ## Contributing
 

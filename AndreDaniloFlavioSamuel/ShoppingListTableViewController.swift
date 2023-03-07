@@ -9,10 +9,12 @@ import UIKit
 import CoreData
 
 class ShoppingListTableViewController: UITableViewController {
-        
+    
+    // MARK: - Properties
     var fetchedResultController: NSFetchedResultsController<Product>!
     var label = UILabel()
     
+    // MARK: - Super Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         loadProduct()
@@ -45,7 +47,6 @@ class ShoppingListTableViewController: UITableViewController {
         }
     }
 
-    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = fetchedResultController.fetchedObjects?.count ?? 0
@@ -76,7 +77,6 @@ class ShoppingListTableViewController: UITableViewController {
 
 extension ShoppingListTableViewController: NSFetchedResultsControllerDelegate {
     
-    // MARK: NSFetched Delegate
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         switch type {
