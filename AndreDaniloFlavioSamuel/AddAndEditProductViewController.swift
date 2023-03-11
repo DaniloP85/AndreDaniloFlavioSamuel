@@ -26,7 +26,7 @@ class AddAndEditProductViewController: UIViewController {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
-        pickerView.backgroundColor = .white
+        pickerView.backgroundColor = .systemBackground
         return pickerView
     }()
     
@@ -72,6 +72,11 @@ class AddAndEditProductViewController: UIViewController {
             title = "Editar Produto"
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     // MARK: - Buttons pickerView
     
     @objc func cancel(){
