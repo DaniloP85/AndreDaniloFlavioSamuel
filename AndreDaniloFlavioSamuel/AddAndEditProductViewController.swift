@@ -26,7 +26,7 @@ class AddAndEditProductViewController: UIViewController {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
-        pickerView.backgroundColor = .white
+        pickerView.backgroundColor = .systemBackground
         return pickerView
     }()
     

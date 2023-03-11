@@ -36,6 +36,11 @@ class SettingsViewController: UIViewController {
         setConfigsInScreen()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        print("ok")
+    }
+    
     // MARK: - IBActions
     
     @IBAction func addStates(_ sender: UIButton) {
