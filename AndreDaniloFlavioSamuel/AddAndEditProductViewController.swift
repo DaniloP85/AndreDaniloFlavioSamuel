@@ -72,6 +72,11 @@ class AddAndEditProductViewController: UIViewController {
             title = "Editar Produto"
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     // MARK: - Buttons pickerView
     
     @objc func cancel(){
